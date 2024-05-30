@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@import url('https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.600/neodgm/style.css');
+html{ font-family: 'NeoDunggeunmo'; }
+.fade {
+    animation: fadein 1s cubic-bezier(0.31, 0, 0.58, 1) forwards;
+    position: relative;
+    font-size: 4rem;
+    text-align: center;
+}
+
+@keyframes fadein {
+    from {left: 250px; opacity: 0}
+    to {left: 0px; opacity: 1}
+}
+
+@keyframes flash {
+    10%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0.3;
+    }
+}
+
+h1 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 3rem;
+    color: white;
+    font-weight: 100;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 2rem;
+    color: #0057FF;
+    font-weight: 100;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 4rem;
+    color: white;
+    font-weight: 100;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 4rem;
+    color: white;
+    font-weight: 100;
+    line-height: 1.5;
+    text-align: left;
+}
+
+h5 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 3rem;
+    color: white;
+    font-weight: 100;
+    line-height: 1.3;
+    text-align: center;
+}
+
+h6 {
+    font-family: 'NeoDunggeunmo';
+    font-size: 3rem;
+    color: white;
+    font-weight: 100;
+    line-height: 1.3;
+    text-align: center;
+}
+
+p1 {position: relative; font-family: 'Pretendard'; font-weight: 400; font-size: 1.8rem; color: ghostwhite; line-height: 1.6}
+
+h3::before {
+    content: '';
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 40px; /* 밑줄 두께 */
+    background-color: #0057FF;
+    position: absolute;
+    left: 9%;
+    z-index: -1;
+}
+
+h5::before {
+    content: '';
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 70px; /* 밑줄 두께 */
+    background-color: #0057FF;
+    position: absolute;
+    top:5;
+    left: 2;
+    z-index: -1;
+}
+
+h6::before {
+    content: '';
+    display: flex;
+    justify-content: space-between;
+    width: 38%;
+    height: 70px; /* 밑줄 두께 */
+    background-color: #0057FF;
+    position: absolute;
+    top:5;
+    left: 2;
+    z-index: -1;
+}
+
+
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
+}
+
+.wrap {
+    width: 1000px;
+    margin: auto;
+    position: relative;
+}
+.wrap1 {
+    width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    font-family: 'NeoDunggeunmo';
+    font-size: 1.5rem;
+}
+
+.menu li {
+    padding-right: 60px;
+    padding-left: 40px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu li a:hover {
+    color: #0057FF;
+}
+
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+}
+
+.logo {
+    padding-left: 40px;
+    font-family: 'NeoDunggeunmo';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: #0057FF;
+}
+
+.img0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    scale: 25%;
+}
+
+.img1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    scale: 160%;
+}
+
+.img2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 60%;
+}
+
+.img3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 115%;
+    margin-top: -95px;
+}
+
+.img4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 145%;
+    padding-top: 25px;
+}
+
+.img5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 178%;
+    padding-top: 33px;
+    animation: flash 1.4s infinite;
+}
+
+.img6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 208%;
+    padding-top: 45px;
+}
+
+.img0 .overlay {
+    position: absolute;
+    top: 15;
+    left: 25;
+    scale: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(30deg);
+}
+
+.responsive-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    transition: transform 1s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.scroll-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.responsive-text {
+    transition: transform 1s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -80px;
+}
+
+.center1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container {display: flex; justify-content: center; scale: 35%; margin-left: -100px;}
+
+.container2 {display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column count and width */
+    gap: 40px; /* Add gap between grid items */
+    justify-content: center;
+    padding: 40px;
+    padding-top: 100px;}
+
+.container2 .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container2 img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    filter: blur(8px);
+    transition: filter 0.3s ease-in-out; 
+}
+
+.container2 .image-wrapper:hover img {
+    filter: none; /* Remove blur effect on hover */
+}
+
+.container2 .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #0057FF; 
+    font-size: 1rem;
+    font-family: 'Pretendard'; font-weight: 600; font-size: 1.5rem;
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.container2 .image-wrapper:hover .overlay {
+    opacity: 1; /* Show overlay text on hover */
+}
+
+</style>
+</head>
+<body style="background-color: black;">
+  <nav class="fixed-nav">
+    <div class="flex">
+      <div class="logo"> DROPPER </div>
+      <ul class="menu">
+        <li><a href="#aaa">ABOUT</a></li>
+        <li><a href="#bbb">RISK</a></li>
+        <li><a href="#ccc">PUNISHMENT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="aaa">
+    <div class="wrap img1">
+      <img src="dropper.gif" alt="Dropper GIF">
+    </div>
+    <div class="wrap1">
+      <h1 class="center">* 던지기 수법을 통해 마약을 특정 장소에 운반하는<br>구매자에게 닿기 직전의 전달책</h1>
+      <h2 class="center1">(판매자가 아닌, 판매자와 구매자 사이를 연결하는 사람)</h2>
+    </div>
+    <div class="container" style="padding-top: 200px;">
+      <img src="tr1.png" alt="tr1" class="responsive-image scroll-animation img2">
+      <img src="tr2.png" alt="tr2" class="responsive-image scroll-animation img3">
+      <img src="tr3.png" alt="tr3" class="responsive-image scroll-animation img4">
+      <img src="tr4.png" alt="tr4" class="responsive-image scroll-animation img5">
+      <img src="tr5.png" alt="tr5" class="responsive-image scroll-animation img6">
+    </div>
+    <div class="wrap responsive-text scroll-animation" style="padding-top: 250px;">
+        <h3 class="center"> 드라퍼는 왜 등장했을까? </h3>
+    </div>
+    <div class="wrap1" style="padding-top:250px;">
+        <h4 class="responsive-text scroll-animation">온라인<br>마약 거래의<br>활성화</h4>
+        <p1>온라인 거래의 활성화로 중간 운반책이 필요해져 드라퍼가 등장했다.<br>특수한 경로로만 접근 가능한 다크웹 거래자가 특히 증가했으며,<br>중간 운반책과 가상화폐를 통해 거래가 이루어지기 때문에<br>유통자의 신상을 파악하기 어렵다.</p1>
+    </div>
+    <div class="img0" style="padding-top: 50px;">
+        <img src="person.png">
+        <div class="overlay">
+            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHB1OHNzYmcyb2l4enh3c3FtNXMyenU1YzN3b3FobnE4dmdobmFkZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/dvyeWHR9qItih29laY/giphy.gif" alt="Overlay GIF">
+        </div>
+    </div>
+    <div class="wrap1">
+        <h5 class="center" style="padding-top:30px;">'마약 사범 4명 중 1명은 온라인으로 마약 거래'</h5>
+    </div>
+    <div class="wrap1" style="padding-top:250px;">
+        <h4 class="responsive-text scroll-animation">드라퍼들은<br>마약을 어디에<br>드랍할까?</h4>
+        <p1>드라퍼들은 우리의 일상 곳곳에 마약을 숨기고 있다.</p1>
+    </div>
+    <div class="container2">
+      <div class="image-wrapper">
+          <img src="pl1.png" alt="pl1">
+          <div class="overlay">재활용<br>쓰레기장</div>
+      </div>
+      <div class="image-wrapper">
+          <img src="pl2.png" alt="pl2">
+          <div class="overlay">놀이터</div>
+      </div>
+      <div class="image-wrapper">
+          <img src="pl3.png" alt="pl3">
+          <div class="overlay">실외기</div>
+      </div>
+      <div class="image-wrapper">
+          <img src="pl4.png" alt="pl4">
+          <div class="overlay">우편함</div>
+      </div>
+      <div class="image-wrapper">
+          <img src="pl5.png" alt="pl5">
+          <div class="overlay">주택가 창틀</div>
+      </div>
+  </div>
+  <div class="wrap1">
+        <h6 class="center" style="padding-top:100px;">혹시 내 주변에도?</h6>
+
+        
+
+
+    </div>
+
+
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = document.querySelectorAll('.scroll-animation');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        images.forEach(image => {
+            observer.observe(image);
+        });
+    });
+  </script>
+</body>
+</html>
